@@ -7,10 +7,15 @@ FROM alpine:3.21 AS build
 
 RUN apk add --no-cache nodejs npm git
 
-# jmcjm/rethink `deploy` branch: upstream master + RH90V9_WW dryer handler
-# + Y_V8_Y___W.B32QEUK EU washer extensions. Bump on every add-on update.
-ARG RETHINK_REPO=https://github.com/jmcjm/rethink.git
-ARG RETHINK_REV=bc7bd37dfcac012e99787ec44438e3f4e98ba7ad
+# forevaclevah2/rethink: anszom/rethink master + the 2REF11EBIR__4 handler
+# (LG LF21G6200S, 65-byte truncated status body). See docs/2REF11EBIR__4.md in
+# that repo for the frame capture and offset table. Bump on every add-on update.
+#
+# The revision below lives on branch `add-2REF11EBIR__4`, not on master. The
+# clone here is deliberately NOT shallow, so all refs are fetched and the commit
+# is reachable for checkout.
+ARG RETHINK_REPO=https://github.com/forevaclevah2/rethink.git
+ARG RETHINK_REV=1940b9de1ba9a2fdf6816fee38a10f0e5d75a843
 
 RUN git clone "$RETHINK_REPO" /src \
     && git -C /src checkout "$RETHINK_REV"
