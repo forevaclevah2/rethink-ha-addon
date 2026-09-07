@@ -15,7 +15,7 @@ RUN apk add --no-cache nodejs npm git
 # clone here is deliberately NOT shallow, so all refs are fetched and the commit
 # is reachable for checkout.
 ARG RETHINK_REPO=https://github.com/forevaclevah2/rethink.git
-ARG RETHINK_REV=1940b9de1ba9a2fdf6816fee38a10f0e5d75a843
+ARG RETHINK_REV=c6ae9c02f8b32e6fd2b7fd30b0108047e094c9ec
 
 RUN git clone "$RETHINK_REPO" /src \
     && git -C /src checkout "$RETHINK_REV"
